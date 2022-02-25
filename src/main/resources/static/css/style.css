@@ -1,1 +1,18 @@
 @charset "UTF-8";
+
+#warp {
+	width:800px;
+	margin:auto;
+}
+
+header {
+	height:70px;
+}
+
+.content {
+	height:500px;
+}
+
+footer {
+	height:50px;
+}
