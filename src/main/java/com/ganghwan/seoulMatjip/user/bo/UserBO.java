@@ -16,4 +16,9 @@ public class UserBO {
 	public User getUser(String loginId, String password) {
 		return userDAO.selectUser(loginId, password);
 	}
+	
+	// 회원가입
+	public int addUser(String loginId, String password, String userName, int interestAreaId) {
+		return userDAO.insertUser(loginId, password, userName, interestAreaId);
+	}
 }

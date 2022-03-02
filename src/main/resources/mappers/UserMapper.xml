@@ -6,7 +6,7 @@
 <mapper namespace = "com.ganghwan.seoulMatjip.user.dao.UserDAO">
 
 	<!-- 로그인 -->
-	<select id = "selectUser" parameterType = "map" resultType = "com.ganghwan.seoulMatjip.user.model">
+	<select id = "selectUser" parameterType = "map" resultType = "com.ganghwan.seoulMatjip.user.model.User">
 		SELECT
 			`id`
 			, `loginId`
@@ -24,4 +24,25 @@
 			`password` = #{password}
 	</select>
 	
+	<!-- 회원가입 -->
+	<insert id = "insertUser" parameterType = "map">
+		INSERT INTO `user`
+		(
+			`loginId`
+			, `password`
+			, `userName`
+			, `interestAreaId`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES
+		(
+			#{loginId}
+			, #{password}
+			, #{userName}
+			, #{interestAreaId}
+			, now()
+			, now()
+		)
+	</insert>
 </mapper>

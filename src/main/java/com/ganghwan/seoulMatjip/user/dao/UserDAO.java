@@ -13,4 +13,12 @@ public interface UserDAO {
 			@Param("loginId") String loginId,
 			@Param("password") String password
 			);
+	
+	// 회원가입
+	public int insertUser(
+			@Param("loginId") String loginId,
+			@Param("password") String password,
+			@Param("userName") String userName,
+			@Param("interestAreaId") int interestAreaId
+			);
 }

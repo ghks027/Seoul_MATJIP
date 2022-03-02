@@ -36,21 +36,85 @@
 				
 				<input type = "password" class = "form-control mt-3" placeholder = "Password" id = "passwordInput">
 				<input type = "password" class = "form-control mt-3" placeholder = "비밀번호 확인" id = "passwordConflimInput">
-				<input type = "text" class = "form-control mt-3" placeholder = "이름" id = "nameInput">
+				<input type = "text" class = "form-control mt-3" placeholder = "이름" id = "userNameInput">
 				
-				<select class = "form-control text-secondary mt-3" id = "areaInput" name = "area">
+				<select class = "form-control text-secondary mt-3" id = "interestAreaInput" name = "area">
 					<option value = "관심 지역" selected = "selected">관심 지역</option>
 					<option value = "홍대">홍대</option>
 					<option value = "강남">강남</option>
 				</select>
 				
 				<button type = "button" id = "joinBtn" class = "btn btn-block mt-3 text-white" style = "background-color:#32CD32;">가입하기</button>
+				
+				<hr>
+				
+				<a href = "/user/signin_view" class = "btn btn-block text-secondary">뒤로가기</a>
 			</div>
 		</section>
 		
 		<c:import url = "/WEB-INF/jsp/include/footer.jsp"/>
 		
 	</div>
+	
+	<script>
+		$(document).ready(function() {
+			
+			// 회원가입
+			$("#joinBtn").on("click", function() {
+				var loginId = $("#loginIdInput").val();
+				var password = $("#passwordInput").val();
+				var passwordConflim = $("#passwordConflimInput").val();
+				var userName = $("#userNameInput").val();
+	 			var interestArea = $("#interestAreaInput").val();
+				
+		 		if(loginId == "") {
+					alert("아이디를 입력하세요");
+					return;
+				}
+		 		
+				if(password == "") {
+					alert("비밀번호를 입력하세요");
+					return;
+				}
+				
+				if(passwordConflim == "") {
+					alert("비밀번호를 입력하세요");
+					return;
+				}
+				
+				if(passwordConflim != password) {
+					alert("비밀번호가 일치하지 않습니다");
+					return;
+				}
+				
+				if(userName == "") {
+					alert("이름을 입력하세요");
+					return;
+				}
+				
+				if(interestArea == "관심 지역") {
+					alert("관심 지역을 선택하세요");
+					return;
+				}
+				
+				$.ajax ({
+					type:"post",
+					url:"/user/sign_up",
+					data:{"loginId":loginId, "password":password, "userName":userName, "interestAreaId":interestAreaId},
+					success:function(data) {
+						if(data.result == "success") {
+							location.href = "/user/signin_view";
+						} else {
+							alert("회원가입 실패");
+						}
+					},
+					error:function() {
+						alert("에러 발생");
+					}
+				});
+			});
+		});
+	</script>
 	
 </body>
 </html>

@@ -27,7 +27,7 @@
 		<section class = "content d-flex justify-content-center">
 			<div class = "login my-5">
 				<form id = "loginForm">
-					<span class = "text-center" style = "color:#32CD32;"><h2>Seoul MATJIP</h2></span>
+					<span class = "text-center" style = "color:#32CD32;"><h1>Seoul MATJIP</h1></span>
 					<input type = "text" class = "form-control mt-3" id = "loginIdInput" placeholder = "아이디">
 					<input type = "text" class = "form-control mt-3" id = "password" placeholder = "비밀번호">
 					<button type = "submit" class = "btn btn-block text-white mt-3" style = "background-color:#32CD32;">로그인</button>
