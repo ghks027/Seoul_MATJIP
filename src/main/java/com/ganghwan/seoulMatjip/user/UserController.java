@@ -13,4 +13,10 @@ public class UserController {
 	public String signInView() {
 		return "user/signIn";
 	}
+	
+	// 회원가입
+	@GetMapping("/signup_view")
+	public String signUpView() {
+		return "user/signUp";
+	}
 }

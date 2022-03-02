@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Seoul MATJIP 로그인</title>
+<title>Seoul MATJIP</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -18,25 +21,25 @@
 <body>
 
 	<div id = "warp">
+	
+		<header></header>
 		
-		<header class = "bg-warning">
-			<span class = "text-success"><h2>Seoul MATJIP</h2></span>
-		
-		</header>
-		
-		<section class = "content">
-			<form id = "loginForm">
-				<div>
-					<input type = "text" class = "form-control" id = "loginIdInput" placeholder = "아이디">
-					<input type = "text" class = "form-control" id = "password" placeholder = "비밀번호">
-					<button type = "submit" class = "btn btn-block text-white" style = "background-color:#32CD32;">로그인</button>
-				</div>
-			</form>
+		<section class = "content d-flex justify-content-center">
+			<div class = "login my-5">
+				<form id = "loginForm">
+					<span class = "text-center" style = "color:#32CD32;"><h2>Seoul MATJIP</h2></span>
+					<input type = "text" class = "form-control mt-3" id = "loginIdInput" placeholder = "아이디">
+					<input type = "text" class = "form-control mt-3" id = "password" placeholder = "비밀번호">
+					<button type = "submit" class = "btn btn-block text-white mt-3" style = "background-color:#32CD32;">로그인</button>
+				</form>
+				
+				<hr>
+				
+				<a href = "/user/signup_view" class = "btn btn-block text-secondary">회원가입</a>
+			</div>
 		</section>
 		
-		<footer class = "bg-info">
-		
-		</footer>
+		<c:import url = "/WEB-INF/jsp/include/footer.jsp"/>
 		
 	</div>
 	
