@@ -28,23 +28,23 @@
 			<div class = "login my-5">
 				<div class = "d-flex">
 					<input type = "text" class = "form-control" placeholder = "Username" id = "loginIdInput">
-					<button type = "button" id = "duplicateBtn" class = "btn ml-3 text-white" style = "background-color:#32CD32;">중복확인</button>
+					<button type = "button" class = "btn ml-3 text-white" style = "background-color:#32CD32;" id = "duplicateBtn">중복확인</button>
 				</div>
 				
-				<div id = "duplicateId" class = "text-danger mt-1 d-none">중복된 아이디 입니다</div>
-				<div id = "noneDuplicateId" class = "text-success mt-1 d-none">사용 가능한 아이디 입니다</div>
+				<div class = "text-danger mt-1 ml-2 d-none" id = "duplicateId"><small>중복된 아이디 입니다</small></div>
+				<div class = "text-success mt-1 ml-2 d-none" id = "noneDuplicateId"><small>사용 가능한 아이디 입니다</small></div>
 				
 				<input type = "password" class = "form-control mt-3" placeholder = "Password" id = "passwordInput">
 				<input type = "password" class = "form-control mt-3" placeholder = "비밀번호 확인" id = "passwordConflimInput">
 				<input type = "text" class = "form-control mt-3" placeholder = "이름" id = "userNameInput">
 				
-				<select class = "form-control text-secondary mt-3" id = "interestAreaInput" name = "area">
+				<select class = "form-control text-secondary mt-3" name = "area" id = "interestAreaInput">
 					<option value = "관심 지역" selected = "selected">관심 지역</option>
 					<option value = "홍대">홍대</option>
 					<option value = "강남">강남</option>
 				</select>
 				
-				<button type = "button" id = "joinBtn" class = "btn btn-block mt-3 text-white" style = "background-color:#32CD32;">가입하기</button>
+				<button type = "button" class = "btn btn-block mt-3 text-white" style = "background-color:#32CD32;" id = "joinBtn">가입하기</button>
 				
 				<hr>
 				
@@ -78,7 +78,7 @@
 				}
 				
 				if(passwordConflim == "") {
-					alert("비밀번호를 입력하세요");
+					alert("비밀번호 확인을 입력하세요");
 					return;
 				}
 				
@@ -106,6 +106,36 @@
 							location.href = "/user/signin_view";
 						} else {
 							alert("회원가입 실패");
+						}
+					},
+					error:function() {
+						alert("에러 발생");
+					}
+				});
+			});
+			
+			// 중복확인
+			$("#duplicateBtn").on("click", function() {
+				var loginId = $("#loginIdInput").val();
+				
+				if(loginId == "") {
+					alert("아이디를 입력하세요");
+					return;
+				}
+				
+				$.ajax ({
+					type:"get",
+					url:"/user/is_duplicate_id",
+					data:{"loginId":loginId},
+					success:function(data) {
+						if(data.isDuplicate == "ture") {
+					 		$("#duplicateId").removeClass("d-none");
+							$("#noneDuplicateId").addClass("d-none"); 
+							isDuplicateId = true;
+						} else {
+							$("#noneDuplicateId").removeClass("d-none");
+							$("#duplicateId").addClass("d-none");
+							isDuplicatedId = false;
 						}
 					},
 					error:function() {

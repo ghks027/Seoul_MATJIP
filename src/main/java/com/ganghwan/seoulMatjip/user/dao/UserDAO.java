@@ -21,4 +21,9 @@ public interface UserDAO {
 			@Param("userName") String userName,
 			@Param("interestAreaId") int interestAreaId
 			);
+	
+	// 중복확인
+	public int selectCountId(
+			@Param("loginId") String loginId
+			);
 }

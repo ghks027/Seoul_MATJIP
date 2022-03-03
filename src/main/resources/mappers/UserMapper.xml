@@ -45,4 +45,14 @@
 			, now()
 		)
 	</insert>
+	
+	<!-- 중복확인 -->
+	<select id = "selectCountId" parameterType = "String" resultType = "int">
+		SELECT
+			count(*)
+		FROM
+			`user`
+		WHERE
+			`loginId` = #{loginId}
+	</select>
 </mapper>
