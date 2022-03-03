@@ -30,9 +30,6 @@ public class UserController {
 			Model model
 			) {
 		
-//		List<PostDetail> postlist = postBO.getPostList(userId);
-//		model.addAttribute("postList", postlist);
-		
 		List<Area> areaList = areaBO.getAreaList();
 		model.addAttribute("areaList", areaList);
 		
