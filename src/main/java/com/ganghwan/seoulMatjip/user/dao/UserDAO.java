@@ -19,7 +19,7 @@ public interface UserDAO {
 			@Param("loginId") String loginId,
 			@Param("password") String password,
 			@Param("userName") String userName,
-			@Param("interestAreaId") int interestAreaId
+			@Param("areaId") int areaId
 			);
 	
 	// 중복확인

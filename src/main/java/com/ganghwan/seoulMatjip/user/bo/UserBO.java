@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ganghwan.seoulMatjip.common.EncryptUtils;
+import com.ganghwan.seoulMatjip.user.area.dao.AreaDAO;
 import com.ganghwan.seoulMatjip.user.dao.UserDAO;
 import com.ganghwan.seoulMatjip.user.model.User;
 
@@ -19,8 +20,8 @@ public class UserBO {
 	}
 	
 	// 회원가입
-	public int addUser(String loginId, String password, String userName, int interestAreaId) {
-		return userDAO.insertUser(loginId, EncryptUtils.md5(password), userName, interestAreaId);
+	public int addUser(String loginId, String password, String userName, int areaId) {
+		return userDAO.insertUser(loginId, EncryptUtils.md5(password), userName, areaId);
 	}
 	
 	// 중복확인

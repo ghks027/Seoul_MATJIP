@@ -47,10 +47,10 @@ public class UserRestController {
 			@RequestParam("loginId") String loginId,
 			@RequestParam("password") String password,
 			@RequestParam("userName") String userName,
-			@RequestParam("interestAreaId") int interestAreaId
+			@RequestParam("areaId") int areaId
 			) {
 		
-		int count = userBO.addUser(loginId, password, userName, interestAreaId);
+		int count = userBO.addUser(loginId, password, userName, areaId);
 		
 		Map<String, String> result = new HashMap<>();
 		
