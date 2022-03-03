@@ -29,7 +29,7 @@
 				<form id = "loginForm">
 					<span class = "text-center" style = "color:#32CD32;"><h1>Seoul MATJIP</h1></span>
 					<input type = "text" class = "form-control mt-3" id = "loginIdInput" placeholder = "아이디">
-					<input type = "password" class = "form-control mt-3" id = "password" placeholder = "비밀번호">
+					<input type = "password" class = "form-control mt-3" id = "passwordInput" placeholder = "비밀번호">
 					<button type = "submit" class = "btn btn-block text-white mt-3" style = "background-color:#32CD32;">로그인</button>
 				</form>
 				
@@ -43,5 +43,43 @@
 		
 	</div>
 	
+	<script>
+		$(document).ready(function() {
+			
+			// 로그인
+			$("#loginForm").on("submit", function(e) {
+				e.preventDefault();
+				var loginId = $("#loginIdInput").val();
+				var password = $("#passwordInput").val();
+				
+	 			if(loginId == "") {
+					alert("아이디를 입력하세요");
+					return;
+				} 
+				
+				if(password == "") {
+					alert("비밀번호를 입력하세요");
+					return;
+				}
+				
+ 				$.ajax ({
+					type:"post",
+					url:"/user/sign_in",
+					data:{"loginId":loginId, "password":password},
+					success:function(data) {
+						if(data.result == "success") {
+							location.href = "/post/postList_view";
+						} else {
+							alert("로그인 실패");
+						}
+					},
+					error:function() {
+						alert("에러 발생");
+					}
+				}); 
+			});
+		});
+	</script>
+				
 </body>
 </html>
