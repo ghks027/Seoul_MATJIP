@@ -125,19 +125,19 @@
 					return;
 				}
 				
-				$.ajax ({
+				$.ajax({
 					type:"get",
 					url:"/user/is_duplicate_id",
 					data:{"loginId":loginId},
 					success:function(data) {
-						if(data.isDuplicate == "ture") {
+						if(data.isDuplicate == "true") {
 					 		$("#duplicateId").removeClass("d-none");
 							$("#noneDuplicateId").addClass("d-none"); 
 							isDuplicateId = true;
 						} else {
 							$("#noneDuplicateId").removeClass("d-none");
-							$("#duplicateId").addClass("d-none");
-							isDuplicatedId = false;
+							$("#duplicateId").addClass("d-none"); 
+							isDuplicateId = false;
 						}
 					},
 					error:function() {
