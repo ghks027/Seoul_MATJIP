@@ -2,6 +2,9 @@ package com.ganghwan.seoulMatjip.user;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,5 +37,20 @@ public class UserController {
 		model.addAttribute("areaList", areaList);
 		
 		return "user/signUp";
+	}
+	
+	// 로그아웃
+	@GetMapping("/signout_view")
+	public String signOutView(
+			HttpServletRequest request
+			) {
+		
+		HttpSession session = request.getSession();
+		
+		session.removeAttribute("userId");
+		session.removeAttribute("userLoginId");
+		session.removeAttribute("userName");
+		
+		return "redirect:/user/signin_view";
 	}
 }
