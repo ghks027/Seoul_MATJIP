@@ -55,7 +55,7 @@
 						
 						<!-- 글쓰기 기능 -->
 						<div class = "d-flex align-items-center">
-							<button type = "button" class = "btn btn-block text-white" style = "background-color:#32CD32;" id = "createBtn">글쓰기</button>
+							<a href = "/post/postCreate_view" class = "btn text-white" style = "background-color:#32CD32;">글쓰기</a>
 						</div>
 					</div>
 				</article>

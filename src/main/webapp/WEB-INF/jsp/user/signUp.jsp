@@ -48,8 +48,10 @@
 				<button type = "button" class = "btn btn-block mt-3 text-white" style = "background-color:#32CD32;" id = "joinBtn">가입하기</button>
 					
 				<hr>
-					
-				<a href = "/user/signin_view" class = "btn btn-block text-secondary">뒤로가기</a>
+				
+				<div class = "d-flex justify-content-center">
+					<a href = "/user/signin_view" class = "btn text-secondary">뒤로가기</a>
+				</div>
 			</div>
 		</section>
 		

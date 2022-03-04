@@ -34,8 +34,9 @@
 				</form>
 				
 				<hr>
-				
-				<a href = "/user/signup_view" class = "btn btn-block text-secondary">회원가입</a>
+				<div class = "d-flex justify-content-center">
+					<a href = "/user/signup_view" class = "btn text-secondary">회원가입</a>
+				</div>
 			</div>
 		</section>
 		

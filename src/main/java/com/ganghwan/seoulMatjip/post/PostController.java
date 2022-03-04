@@ -29,4 +29,10 @@ public class PostController {
 		
 		return "post/postList";
 	}
+	
+	// 포스트 작성
+	@GetMapping("/postCreate_view")
+	public String postCreateView() {
+		return "post/postCreate";
+	}
 }

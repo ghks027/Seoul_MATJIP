@@ -11,7 +11,7 @@
 			<div class = "d-flex align-items-end mr-3">
 				<c:choose>
 					<c:when test = "${not empty userId}">
-						<a href = "/user/signout_view"><span style = "color:#000000;">${userName } 님</span> 로그아웃</a>
+						<div class = "mr-3">${userName } 님<a href = "/user/signout_view"> 로그아웃</a></div>
 					</c:when>
 					
 					<c:otherwise>
