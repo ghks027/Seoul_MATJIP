@@ -10,7 +10,11 @@ header {
 }
 
 .content > .login {
-	width:400px;
+	width:340px;
+}
+
+.content > .post {
+	width:700px;	
 }
 
 footer {

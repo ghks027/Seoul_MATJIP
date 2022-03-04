@@ -34,22 +34,21 @@
 				<div class = "text-danger mt-1 ml-2 d-none" id = "duplicateId"><small>중복된 아이디 입니다</small></div>
 				<div class = "text-success mt-1 ml-2 d-none" id = "noneDuplicateId"><small>사용 가능한 아이디 입니다</small></div>
 				
-				<input type = "password" class = "form-control mt-3" placeholder = "Password" id = "passwordInput">
-				<input type = "password" class = "form-control mt-3" placeholder = "비밀번호 확인" id = "passwordConflimInput">
+				<input type = "password" class = "form-control mt-3" placeholder = "Password" id = "passwordInput">				<input type = "password" class = "form-control mt-3" placeholder = "비밀번호 확인" id = "passwordConflimInput">
 				<input type = "text" class = "form-control mt-3" placeholder = "이름" id = "userNameInput">
-				
+					
 				<select class = "form-control text-secondary mt-3" name = "area" id = "areaIdInput">
 					<option value = "관심 지역" selected = "selected">관심 지역</option>
-					
+						
 					<c:forEach var = "areaList" items = "${areaList }">
 						<option value = "${areaList.id }">${areaList.area }</option>
 					</c:forEach>
 				</select>
-				
+					
 				<button type = "button" class = "btn btn-block mt-3 text-white" style = "background-color:#32CD32;" id = "joinBtn">가입하기</button>
-				
+					
 				<hr>
-				
+					
 				<a href = "/user/signin_view" class = "btn btn-block text-secondary">뒤로가기</a>
 			</div>
 		</section>
