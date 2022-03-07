@@ -8,7 +8,7 @@ public class User {
 	private String loginId;
 	private String password;
 	private String userName;
-	private int areaId;
+	private String areaAreaId;
 	private String profileImage;
 	private Date createdAt;
 	private Date updatedAt;
@@ -37,11 +37,11 @@ public class User {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public int getAreaId() {
-		return areaId;
+	public String getareaAreaId() {
+		return areaAreaId;
 	}
-	public void setAreaId(int areaId) {
-		this.areaId = areaId;
+	public void setareaAreaId(String areaAreaId) {
+		this.areaAreaId = areaAreaId;
 	}
 	public String getProfileImage() {
 		return profileImage;

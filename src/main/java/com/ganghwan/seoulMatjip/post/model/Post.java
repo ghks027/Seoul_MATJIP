@@ -8,9 +8,9 @@ public class Post {
 	private int userId;
 	private String userLoginId;
 	private String title;
-	private String text;
+	private String content;
 	private String imagePath;
-	private int areaId;
+	private String areaAreaId;
 	private String userProfileImage;
 	private Date createdAt;
 	private Date updatedAt;
@@ -39,11 +39,11 @@ public class Post {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getText() {
-		return text;
+	public String getContent() {
+		return content;
 	}
-	public void setText(String text) {
-		this.text = text;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	public String getImagePath() {
 		return imagePath;
@@ -51,11 +51,11 @@ public class Post {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	public int getAreaId() {
-		return areaId;
+	public String getareaAreaId() {
+		return areaAreaId;
 	}
-	public void setAreaId(int areaId) {
-		this.areaId = areaId;
+	public void setareaAreaId(String areaAreaId) {
+		this.areaAreaId = areaAreaId;
 	}
 	public String getUserProfileImage() {
 		return userProfileImage;

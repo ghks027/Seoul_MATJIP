@@ -38,11 +38,11 @@
 						</form>
 						
 						<!-- 지역별 정렬 -->
-						<select class = "form-control text-secondary w-50" name = "area" id = "areaIdInput">
+						<select class = "form-control text-secondary w-50" name = "area" id = "areaAreaIdIdInput">
 							<option value = "전체" selected = "selected">전체</option>
 								
 							<c:forEach var = "areaList" items = "${areaList }">
-								<option value = "${areaList.id }">${areaList.area }</option>
+								<option value = "${areaList.area }">${areaList.area }</option>
 							</c:forEach>
 						</select>
 					</div>
@@ -63,40 +63,37 @@
 				<hr>
 				
 				<!-- 포스트 리스트 -->
-				<div class = "postList d-flex form-control">
-					<div class = "bg-danger w-80">
-						<div class = "d-flex">
-							<div class = "form-control">
-								userId
+				<c:forEach var = "postList" items = "${postList }">
+					<div class = "d-flex form-control justify-content-between mt-3">
+						<div class = "bg-danger">
+							<div class = "d-flex justify-content-between">
+								<div class = "form-control bg-secondary text-white">${postList.userLoginId }</div>
+								
+								<div class = ""><b>#${postList.areaAreaId }</b></div>
 							</div>
 							
 							<div>
-								areaId
+								<div><b>${postList.title }</b></div>
+								
+								<small class = "text-secondary text-smail">${postList.content }</small>
+							</div>
+							
+							<div>
+								like
 							</div>
 						</div>
 						
-						<div>
-							<div>title</div>
+						<div class = "bg-info">
+							<div>${postList.imagePath }</div>
 							
-							<div>content</div>
-						</div>
-						
-						<div>
-							like
-						</div>
-					</div>
-					
-					<div class = "bg-info">
-						<div>
-							image
-						</div>
-						
-						<div class = "d-flex justify-content-between">
-							<div>수정</div>
-							<div>삭제</div>
+							<div class = "d-flex justify-content-between">
+								<div>수정</div>
+								<div>삭제</div>
+							</div>
 						</div>
 					</div>
-				</div>
+				</c:forEach>
+				
 			</div>
 		</section>
 		

@@ -20,8 +20,8 @@ public class UserBO {
 	}
 	
 	// 회원가입
-	public int addUser(String loginId, String password, String userName, int areaId) {
-		return userDAO.insertUser(loginId, EncryptUtils.md5(password), userName, areaId);
+	public int addUser(String loginId, String password, String userName, String areaAreaId) {
+		return userDAO.insertUser(loginId, EncryptUtils.md5(password), userName, areaAreaId);
 	}
 	
 	// 중복확인

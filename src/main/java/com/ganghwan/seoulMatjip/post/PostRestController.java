@@ -28,7 +28,7 @@ public class PostRestController {
 			@RequestParam("title") String title,
 			@RequestParam("content") String content,
 			@RequestParam(value = "file", required = false) MultipartFile file,
-			@RequestParam("areaId") int areaId,
+			@RequestParam("areaAreaId") String areaAreaId,
 			@RequestParam(value = "profile", required = false) MultipartFile profile,
 			HttpServletRequest request
 			) {
@@ -39,7 +39,7 @@ public class PostRestController {
 		String userLoginId = (String)session.getAttribute("userLoginId");
 
 		Map<String, String> result = new HashMap<>();
-		int count = postBO.addPost(userId, userLoginId, title, content, file, areaId, profile);
+		int count = postBO.addPost(userId, userLoginId, title, content, file, areaAreaId, profile);
 		
 		if(count == 1) {
 			result.put("result", "success");

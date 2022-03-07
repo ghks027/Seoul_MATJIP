@@ -37,11 +37,11 @@
 				<input type = "password" class = "form-control mt-3" placeholder = "Password" id = "passwordInput">				<input type = "password" class = "form-control mt-3" placeholder = "비밀번호 확인" id = "passwordConflimInput">
 				<input type = "text" class = "form-control mt-3" placeholder = "이름" id = "userNameInput">
 					
-				<select class = "form-control text-secondary mt-3" name = "area" id = "areaIdInput">
+				<select class = "form-control text-secondary mt-3" name = "area" id = "areaAreaIdInput">
 					<option value = "관심 지역" selected = "selected">관심 지역</option>
 						
 					<c:forEach var = "areaList" items = "${areaList }">
-						<option value = "${areaList.id }">${areaList.area }</option>
+						<option value = "${areaList.area }">${areaList.area }</option>
 					</c:forEach>
 				</select>
 					
@@ -68,7 +68,7 @@
 				var password = $("#passwordInput").val();
 				var passwordConflim = $("#passwordConflimInput").val();
 				var userName = $("#userNameInput").val();
-	 			var areaId = $("#areaIdInput").val();
+	 			var areaAreaId = $("#areaAreaIdInput").val();
 				
 		 		if(loginId == "") {
 					alert("아이디를 입력하세요");
@@ -95,7 +95,7 @@
 					return;
 				}
 				
-				if(areaId == "관심 지역") {
+				if(areaAreaId == "관심 지역") {
 					alert("관심 지역을 선택하세요");
 					return;
 				}
@@ -103,7 +103,7 @@
 				$.ajax ({
 					type:"post",
 					url:"/user/sign_up",
-					data:{"loginId":loginId, "password":password, "userName":userName, "areaId":areaId},
+					data:{"loginId":loginId, "password":password, "userName":userName, "areaAreaId":areaAreaId},
 					success:function(data) {
 						if(data.result == "success") {
 							location.href = "/user/signin_view";

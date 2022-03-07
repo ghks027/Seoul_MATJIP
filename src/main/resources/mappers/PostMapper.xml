@@ -14,7 +14,7 @@
  			, `title`
  			, `content`
  			, `imagePath`
- 			, `areaId`
+ 			, `areaAreaId`
  			, `userProfileImage`
  			, `createdAt`
  			, `updatedAt`
@@ -26,10 +26,29 @@
  			, #{title}
  			, #{content}
  			, #{imagePath}
- 			, #{areaId}
+ 			, #{areaAreaId}
  			, #{userProfileImage}
  			, now()
  			, now()
  		)
  	</insert>
+ 	
+ 	<!-- 포스트 불러오기 -->
+ 	<select id = "selectPostList" resultType = "com.ganghwan.seoulMatjip.post.model.Post">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `userLoginId`
+ 			, `title`
+ 			, `content`
+ 			, `imagePath`
+ 			, `areaAreaId`
+ 			, `userProfileImage`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+ 		ORDER BY
+ 			`id` DESC
+ 	</select>
  </mapper>

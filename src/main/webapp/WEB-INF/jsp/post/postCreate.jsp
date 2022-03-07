@@ -31,11 +31,11 @@
 				<hr>
 				
 				<div class = "d-flex justify-content-end">					
-					<select class = "form-control text-secondary w-50" name = "area" id = "areaIdInput">
+					<select class = "form-control text-secondary w-50" name = "area" id = "areaAreaIdInput">
 						<option value = "지역 선택" selected = "selected">지역 선택</option>
 							
 						<c:forEach var = "areaList" items = "${areaList }">
-							<option value = "${areaList.id }">${areaList.area }</option>
+							<option value = "${areaList.area }">${areaList.area }</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -63,7 +63,7 @@
 		$("#saveBtn").on("click", function() {
 			let title = $("#titleInput").val();
 			let content = $("#contentInput").val().trim();
-			let areaId = $("#areaIdInput").val();
+			let areaAreaId = $("#areaAreaIdInput").val();
 			let file = $("#fileInput").val();
 			
 			if(title == "") {
@@ -71,7 +71,7 @@
 				return;
 			}
 			
-			if(areaId == "지역 선택") {
+			if(areaAreaId == "지역 선택") {
 				alert("지역을 선택하세요");
 				return;
 			}
@@ -90,7 +90,7 @@
 			var formData = new FormData();
 			formData.append("title", title);
 			formData.append("content", content);
-			formData.append("areaId", areaId);
+			formData.append("areaAreaId", areaAreaId);
 			formData.append("file", $("#fileInput")[0].files[0]);
 			
 			$.ajax({
