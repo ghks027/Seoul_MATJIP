@@ -10,7 +10,7 @@ public interface PostDAO {
 	public int insertPost(
 			@Param("userId") int userId,
 			@Param("userLoginId") String userLoginId,
-			@Param("titie") String title,
+			@Param("title") String title,
 			@Param("content") String content,
 			@Param("imagePath") String imagePath,
 			@Param("areaId") int areaId,

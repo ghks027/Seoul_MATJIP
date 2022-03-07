@@ -55,4 +55,65 @@
 	</div>
 	
 </body>
+
+<script>
+	$(document).ready(function() {
+
+		// 게시글 작성
+		$("#saveBtn").on("click", function() {
+			let title = $("#titleInput").val();
+			let content = $("#contentInput").val().trim();
+			let areaId = $("#areaIdInput").val();
+			let file = $("#fileInput").val();
+			
+			if(title == "") {
+				alert("제목을 입력하세요");
+				return;
+			}
+			
+			if(areaId == "지역 선택") {
+				alert("지역을 선택하세요");
+				return;
+			}
+			
+			if(content == "") {
+				alert("내용을 입력하세요");
+				return;
+			}
+			
+			// 파일 유효성 검사
+			if($("#fileInput")[0].files.length == 0) {
+				alert("파일을 선택하세요");
+				return;
+			}
+			
+			var formData = new FormData();
+			formData.append("title", title);
+			formData.append("content", content);
+			formData.append("areaId", areaId);
+			formData.append("file", $("#fileInput")[0].files[0]);
+			
+			$.ajax({
+				type:"post",
+				url:"/post/create",
+				data:formData,
+				// 파일 업로드 필수
+				enctype:"multipart/form-data",
+				processData:false,
+				contentType:false,
+				success:function(data) {
+					if(data.result == "success") {
+						location.href = "/post/postList_view";
+					} else {
+						alert("작성 실패");
+					}
+				},
+				error:function() {
+					alert("에러 발생");
+				}
+			});
+		});
+		
+	});
+</script>
 </html>
