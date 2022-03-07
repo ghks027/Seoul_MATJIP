@@ -32,7 +32,13 @@ public class PostController {
 	
 	// 포스트 작성
 	@GetMapping("/postCreate_view")
-	public String postCreateView() {
+	public String postCreateView(
+			Model model
+			) {
+		
+		List<Area> areaList = areaBO.getAreaList();
+		model.addAttribute("areaList", areaList);
+		
 		return "post/postCreate";
 	}
 }

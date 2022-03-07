@@ -17,6 +17,10 @@ header {
 	width:700px;	
 }
 
+.content > .createPost {
+	width:500px;
+}
+
 footer {
 	height:50px;
 }

@@ -24,17 +24,28 @@
 	
 		<c:import url = "/WEB-INF/jsp/include/header.jsp"/>
 		
-		<section class = "d-flex justify-content-center">
-			<div class = "w-75 my-5">
-				<div class = "d-flex mt-3">
-					<label class = "mr-2">제목 : </label>
-					<input type = "text" class = "form-control col-11" id = "titleInput">
+		<section class = "content d-flex justify-content-center">
+			<div class = "createPost my-5">
+				<input type = "text" class = "form-control mt-3" id = "titleInput" placeholder = "제목을 입력하세요">
+
+				<hr>
+				
+				<div class = "d-flex justify-content-end">					
+					<select class = "form-control text-secondary w-50" name = "area" id = "areaIdInput">
+						<option value = "지역 선택" selected = "selected">지역 선택</option>
+							
+						<c:forEach var = "areaList" items = "${areaList }">
+							<option value = "${areaList.id }">${areaList.area }</option>
+						</c:forEach>
+					</select>
 				</div>
 				
-				<textarea class = "form-control mt-3" rows="5" id = "contentInput"></textarea>
+				<textarea class = "form-control mt-3" rows="5" id = "contentInput" placeholder = "내용을 입력하세요"></textarea>
 				<input type = "file" class = "mt-3" id = "fileInput">
+				
 				<div class = "d-flex justify-content-between mt-3">
-					<button type = "button" class = "btn btn-success" id = "saveBtn">저장</button>
+					<a href = "/post/postList_view" class = "btn btn-secondary">작성 취소</a>
+					<button type = "button" class = "btn text-white" id = "saveBtn" style = "background-color:#32CD32;">저장</button>
 				</div>
 			</div>
 		</section>
