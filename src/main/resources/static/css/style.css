@@ -21,7 +21,7 @@ header {
 	width:700px;
 }
 
-.content > .post > .postList > .postContent > .contentDetail > .content {
+.content > .post > .postList > .postContent > .contentDetail > .detail> .content {
 	display: block;
     width: 450px;
     overflow: hidden;
@@ -33,6 +33,10 @@ header {
 }
 
 .content > .createPost {
+	width:500px;
+}
+
+.content > .postDetail {
 	width:500px;
 }
 

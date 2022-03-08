@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ganghwan.seoulMatjip.post.bo.PostBO;
 import com.ganghwan.seoulMatjip.post.model.Post;
@@ -57,5 +58,13 @@ public class PostController {
 		model.addAttribute("areaList", areaList);
 		
 		return "post/postCreate";
+	}
+	
+	// 포스트
+	@GetMapping("postDetail_view")
+	public String postDetailView() {
+
+		
+		return "post/postDetail";
 	}
 }

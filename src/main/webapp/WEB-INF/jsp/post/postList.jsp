@@ -73,9 +73,11 @@
 							</div>
 							
 							<div class = "contentDetail">
-								<div class = "mt-3 text-dark"><h5><b>${postList.title }</b></h5></div>
-								
-								<small class = "content text-secondary text-smail">${postList.content }</small>
+								<a href = "/post/postDetail_view?postId=${postList.id}" class = "detail">
+									<h5 class = "mt-3 text-dark"><b>${postList.title }</b></h5>
+									
+									<small class = "content text-secondary text-smail">${postList.content }</small>
+								</a>
 							</div>
 							
 							<div class = "mt-3">like</div>
