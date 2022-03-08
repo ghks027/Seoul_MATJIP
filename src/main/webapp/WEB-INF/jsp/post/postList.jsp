@@ -64,31 +64,32 @@
 				
 				<!-- 포스트 리스트 -->
 				<c:forEach var = "postList" items = "${postList }">
-					<div class = "d-flex form-control justify-content-between mt-3">
-						<div class = "bg-danger">
-							<div class = "d-flex justify-content-between">
-								<div class = "form-control bg-secondary text-white">${postList.userLoginId }</div>
+					<div class = "postList d-flex form-control justify-content-between mt-3">
+						<div class = "postContent my-2">
+							<div class = "d-flex align-items-center">
+								<div class = "form-control bg-secondary text-white text-center col-sm-4">${postList.userLoginId }</div>
 								
-								<div class = ""><b>#${postList.areaAreaId }</b></div>
+								<div class = "ml-3 text-dark" style = "border:none;"><b># ${postList.areaAreaId }</b></div>
 							</div>
 							
-							<div>
-								<div><b>${postList.title }</b></div>
+							<div class = "contentDetail">
+								<div class = "mt-3 text-dark"><h5><b>${postList.title }</b></h5></div>
 								
-								<small class = "text-secondary text-smail">${postList.content }</small>
+								<small class = "content text-secondary text-smail">${postList.content }</small>
 							</div>
 							
-							<div>
-								like
-							</div>
+							<div class = "mt-3">like</div>
 						</div>
 						
-						<div class = "bg-info">
-							<div>${postList.imagePath }</div>
-							
-							<div class = "d-flex justify-content-between">
-								<div>수정</div>
-								<div>삭제</div>
+						<div class = "postImage my-2">
+							<div class="image-box">
+								<img class="image-thumbnail" src="${postList.imagePath }">
+							</div>
+
+
+							<div class = "d-flex justify-content-between mt-2">
+								<button type = "button" class = "btn btn-secondary">수정</button>
+								<button type = "button" class = "btn">삭제</button>
 							</div>
 						</div>
 					</div>
@@ -102,4 +103,11 @@
 	</div>
 	
 </body>
+
+<script>
+	$(document).ready(function() {
+
+	});
+</script>
+
 </html>
