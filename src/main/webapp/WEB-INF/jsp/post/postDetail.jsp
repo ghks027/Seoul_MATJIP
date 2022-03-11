@@ -31,7 +31,7 @@
 				<!-- 회원아이디, 포스트 지역, 찜 -->
 				<div class = "d-flex justify-content-between mt-1">
 					<div class = "d-flex ml-3">
-						<div class = "mr-3">${postDetail.userLoginId }</div>
+						<div class = "text-secondary mr-3">${postDetail.userLoginId }</div>
 									
 						<div class = "ml-3"><b># ${postDetail.areaAreaId }</b></div>
 					</div>
@@ -68,6 +68,10 @@
 						<button type = "button" class = "btn btn-sm commentBtn text-white" style = "background-color:#32CD32;">등록</button>
 					</div>
 				</div>
+				
+				<hr>
+				
+				<a href = "/post/postList_view" class = "btn btn-secondary">목록으로</a>
 
 			</div>
 		</section>
