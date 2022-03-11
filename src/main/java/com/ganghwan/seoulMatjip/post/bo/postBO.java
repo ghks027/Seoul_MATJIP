@@ -29,4 +29,9 @@ public class PostBO {
 	public List<Post> getPostList() {
 		return postDAO.selectPostList();
 	}
+	
+	// 아이디로 포스트 불러오기
+	public Post getPostDetail(int postId) {
+		return postDAO.selectPostDetail(postId);
+	}
 }

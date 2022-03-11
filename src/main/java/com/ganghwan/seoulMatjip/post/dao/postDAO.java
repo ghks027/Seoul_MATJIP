@@ -23,4 +23,9 @@ public interface PostDAO {
 	
 	// 포스트 불러오기
 	public List<Post> selectPostList();
+	
+	// 아이디로 포스트 불러오기
+	public Post selectPostDetail(
+			@Param("postId") int postId
+			);
 }

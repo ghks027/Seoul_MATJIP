@@ -62,8 +62,13 @@ public class PostController {
 	
 	// 포스트
 	@GetMapping("postDetail_view")
-	public String postDetailView() {
-
+	public String postDetailView(
+			Model model,
+			@RequestParam("postId") int postId
+			) {
+		
+		Post postDetail = postBO.getPostDetail(postId);
+		model.addAttribute("postDetail", postDetail);
 		
 		return "post/postDetail";
 	}

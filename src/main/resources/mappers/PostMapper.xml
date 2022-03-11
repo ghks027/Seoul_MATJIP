@@ -51,4 +51,23 @@
  		ORDER BY
  			`id` DESC
  	</select>
+ 	
+ 	<!-- 아이디로 포스트 불러오기 -->
+ 	<select id = "selectPostDetail" resultType = "com.ganghwan.seoulMatjip.post.model.Post">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `userLoginId`
+ 			, `title`
+ 			, `content`
+ 			, `imagePath`
+ 			, `areaAreaId`
+ 			, `userProfileImage`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+ 		WHERE
+ 			`id` = #{postId}
+ 	</select>
  </mapper>

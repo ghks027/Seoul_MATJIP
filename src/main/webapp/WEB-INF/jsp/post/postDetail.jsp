@@ -8,9 +8,7 @@
 <head>
 <meta charset="UTF-8">
 
-<c:forEach var = "postList" items = "${postList }">
-	<title>${postList.title }</title>
-</c:forEach>
+<title>Seoul MATJIP : ${postDetail.title }</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -28,41 +26,49 @@
 		<c:import url = "/WEB-INF/jsp/include/header.jsp"/>
 		
 		<section class = "content d-flex justify-content-center">
-			<div class = "postDetail bg-info">
+			<div class = "postDetail">
 			
-			<c:forEach var = "postDetail" items = "${postDetail }">
 				<!-- 회원아이디, 포스트 지역, 찜 -->
-				<div class = "d-flex justify-content-between">
-					<div class = "d-flex">
-						<div>회원아이디</div>
-						
-						<div>#지역</div>
+				<div class = "d-flex justify-content-between mt-1">
+					<div class = "d-flex ml-3">
+						<div class = "mr-3">${postDetail.userLoginId }</div>
+									
+						<div class = "ml-3"><b># ${postDetail.areaAreaId }</b></div>
 					</div>
-					
-					<div>like</div>
-				</div>
-				
-				<!-- 사진 -->
-				<div>사진</div>
-				
-				<!-- 포스트 제목, 글 -->
-				<div>
-					<div>제목</div>
-					
-					<div>내용</div>
+						
+					<div class = "mr-3">like</div>
 				</div>
 				
 				<hr>
+					
+				<!-- 사진 -->
+				<img class = "my-2 w-100 imageClick" src = "${postDetail.imagePath} ">
 				
+				<hr>
+					
+				<!-- 포스트 제목, 글 -->
+				<h5><b>${postDetail.title }</b></h5>
+						
+				<div class = "form-control mt-2" style = "border:none">${postDetail.content }</div>
+					
+				<hr style = "border:solid 1px gray;">
+					
 				<!-- 포스트 댓글 -->
 				<div>
-					<div>댓글</div>
+					<div class = "text-secondary">댓글</div>
 					
-					<div>회원아이디 - 댓글 내용</div>
+					<div class = "d-flex justify-content-between mt-2 ml-3">
+						<div class = "text-secondary" style = "font-size:small"><b class = "text-dark">회원</b> - 댓글 내용</div>
+					</div>
 					
-					<div>댓글 달기 버튼</div>
+					<hr>
+						
+					<div class = "d-flex form-control ">
+						<input  style = "border:none;" type = "text" class = "form-control broder-0 bin mr-2" id = "commentInput" placeholder = "댓글을 입력하세요">
+						<button type = "button" class = "btn btn-sm commentBtn text-white" style = "background-color:#32CD32;">등록</button>
+					</div>
 				</div>
-			</c:forEach>
+
 			</div>
 		</section>
 		
