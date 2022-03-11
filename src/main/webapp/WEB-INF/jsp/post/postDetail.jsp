@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Seoul MATJIP : ${postDetail.title }</title>
+<title>Seoul MATJIP : ${postDetail.post.title }</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -31,9 +31,9 @@
 				<!-- 회원아이디, 포스트 지역, 찜 -->
 				<div class = "d-flex justify-content-between mt-1">
 					<div class = "d-flex ml-3">
-						<div class = "text-secondary mr-3">${postDetail.userLoginId }</div>
+						<div class = "text-secondary mr-3">${postDetail.post.userLoginId }</div>
 									
-						<div class = "ml-3"><b># ${postDetail.areaAreaId }</b></div>
+						<div class = "ml-3"><b># ${postDetail.post.areaAreaId }</b></div>
 					</div>
 						
 					<div class = "mr-3">like</div>
@@ -42,14 +42,14 @@
 				<hr>
 					
 				<!-- 사진 -->
-				<img class = "my-2 w-100 imageClick" src = "${postDetail.imagePath} ">
+				<img class = "my-2 w-100 imageClick" src = "${postDetail.post.imagePath} ">
 				
 				<hr>
 					
 				<!-- 포스트 제목, 글 -->
-				<h5><b>${postDetail.title }</b></h5>
+				<h5><b>${postDetail.post.title }</b></h5>
 						
-				<div class = "form-control mt-2" style = "border:none">${postDetail.content }</div>
+				<div class = "form-control mt-2" style = "border:none">${postDetail.post.content }</div>
 					
 				<hr style = "border:solid 1px gray;">
 					

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ganghwan.seoulMatjip.post.bo.PostBO;
 import com.ganghwan.seoulMatjip.post.model.Post;
+import com.ganghwan.seoulMatjip.post.model.PostDetail;
 import com.ganghwan.seoulMatjip.user.area.bo.AreaBO;
 import com.ganghwan.seoulMatjip.user.area.model.Area;
 
@@ -64,10 +65,13 @@ public class PostController {
 	@GetMapping("postDetail_view")
 	public String postDetailView(
 			Model model,
-			@RequestParam("postId") int postId
+			HttpServletRequest request
 			) {
 		
-		Post postDetail = postBO.getPostDetail(postId);
+		HttpSession session = request.getSession();
+		int postId = (Integer)session.getAttribute("postId");
+		
+		List<PostDetail> postDetail = postBO.getPostDetail(postId);
 		model.addAttribute("postDetail", postDetail);
 		
 		return "post/postDetail";
