@@ -17,6 +17,8 @@
 
 <link rel = "stylesheet" href = "/static/css/style.css" type = "text/css">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
 </head>
 <body>
 	
@@ -80,7 +82,23 @@
 								</a>
 							</div>
 							
-							<div class = "mt-3">like</div>
+							<!-- 찜 -->
+							<div class = "mt-3">
+								<a href = "#" class = "likeBtn text-dark" data-post-id = "${postDetail.post.id }">
+									<c:choose>
+										<c:when test = "찜">
+												<i class="bi bi-heart-fill text-danger"></i>
+										</c:when>
+									
+										<c:otherwise>
+												<i class="bi bi-heart"></i>
+										</c:otherwise>
+									</c:choose>
+									
+									<b style = "font-size:small">찜 개수</b>
+								</a>
+							</div>
+							
 						</div>
 						
 						<div class = "postImage my-2">

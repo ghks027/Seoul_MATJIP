@@ -18,6 +18,8 @@
 
 <link rel = "stylesheet" href = "/static/css/style.css" type = "text/css">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
 </head>
 <body>
 
@@ -35,8 +37,10 @@
 									
 						<div class = "ml-3"><b># ${postDetail.post.areaAreaId }</b></div>
 					</div>
-						
+					
+					<!-- 찜 -->
 					<div class = "mr-3">like</div>
+			
 				</div>
 				
 				<hr>

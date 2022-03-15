@@ -8,6 +8,8 @@ public class PostDetail {
 
 	private Post post;
 	private List<Comment> comment;
+	private int likeCount;
+	private boolean isLike;
 	
 	public Post getPost() {
 		return post;
@@ -20,5 +22,17 @@ public class PostDetail {
 	}
 	public void setComment(List<Comment> comment) {
 		this.comment = comment;
+	}
+	public int getLikeCount() {
+		return likeCount;
+	}
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
+	}
+	public boolean isLike() {
+		return isLike;
+	}
+	public void setLike(boolean isLike) {
+		this.isLike = isLike;
 	}
 }

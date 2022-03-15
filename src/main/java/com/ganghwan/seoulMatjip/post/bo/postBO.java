@@ -1,6 +1,5 @@
 package com.ganghwan.seoulMatjip.post.bo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import com.ganghwan.seoulMatjip.common.FileManagerService;
 import com.ganghwan.seoulMatjip.post.comment.bo.CommentBO;
 import com.ganghwan.seoulMatjip.post.comment.model.Comment;
 import com.ganghwan.seoulMatjip.post.dao.PostDAO;
+import com.ganghwan.seoulMatjip.post.like.bo.LikeBO;
 import com.ganghwan.seoulMatjip.post.model.Post;
 import com.ganghwan.seoulMatjip.post.model.PostDetail;
 
@@ -22,6 +22,9 @@ public class PostBO {
 	
 	@Autowired
 	private CommentBO commentBO;
+	
+	@Autowired
+	private LikeBO likeBO;
 	
 	// 포스트 작성
 	public int addPost(int userId, String userLoginId, String title, String content, MultipartFile file, String areaAreaId, MultipartFile profile) {
@@ -37,24 +40,6 @@ public class PostBO {
 		return postDAO.selectPostList();
 	}
 	
-//	// 아이디로 포스트 불러오기
-//	public List<PostDetail> getPostDetail(int postId) {
-//		
-//		Post postList = postDAO.selectPostDetail(postId);
-//		List<PostDetail> postDetailList = new ArrayList<>();
-//		
-//		// postId로 댓글 불러오기
-//		List<Comment> commentList = commentBO.getCommentList(postId);
-//			
-//		PostDetail postDetail = new PostDetail();
-//		postDetail.setPost(postList);
-//		postDetail.setComment(commentList);
-//		
-//		postDetailList.add(postDetail);
-//		
-//		return postDetailList;
-//	}
-	
 	// 아이디로 포스트 불러오기
 	public PostDetail getPost(int postId) {
 		
@@ -62,10 +47,15 @@ public class PostBO {
 		
 		// postId로 댓글 불러오기
 		List<Comment> commentList = commentBO.getCommentList(postId);
+		
+		// 찜 개수
+		int likeCount = likeBO.getLikeCount(postId);
 			
 		PostDetail postDetail = new PostDetail();
 		postDetail.setPost(post);
 		postDetail.setComment(commentList);
+		
+		postDetail.setLikeCount(likeCount);
 		
 		return postDetail;
 	}

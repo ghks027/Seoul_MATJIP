@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace = "com.ganghwan.seoulMatjip.post.like.dao.LikeDAO">
+ 
+ 	<!-- 찜 하기 -->
+ 	<insert id = "insertLike" parameterType = "map">
+ 	INSERT INTO `like`
+ 	(
+ 		`userId`
+ 		, `postId`
+ 		, `createdAt`
+ 	)
+ 	VALUES
+ 	(
+ 		#{userId}
+ 		, #{postId}
+ 		, now()
+ 	)
+ 	</insert>
+ 
+  	<!-- 찜 취소 -->
+ 	<delete id = "deleteLike">
+ 		DELETE FROM
+ 			`like`
+ 		WHERE
+ 			`userId` = #{userId}
+ 		AND
+ 			`postId` = #{postId}
+ 			
+ 	</delete>
+ 	
+ 	<!-- 찜 불러오기 -->
+ 	<select id = "selectLikeCount" parameterType = "int" resultType = "int">
+ 		SELECT
+ 			count(*)
+ 		FROM
+ 			`like`
+ 		WHERE
+ 			`postId` = #{postId}
+ 	</select>
+ 	
+ 	<!-- 찜 여부 확인 -->
+ 	<select id = "selectLikeCountByUserId" parameterType = "map" resultType = "int">
+ 		SELECT
+ 			count(*)
+ 		FROM
+ 			`like`
+ 		WHERE
+ 			`userId` = #{userId}
+ 		AND
+ 			`postId` = #{postId}
+ 	</select>
+ </mapper>
