@@ -65,13 +65,10 @@ public class PostController {
 	@GetMapping("postDetail_view")
 	public String postDetailView(
 			Model model,
-			HttpServletRequest request
+			@RequestParam("postId") int postId 
 			) {
 		
-		HttpSession session = request.getSession();
-		int postId = (Integer)session.getAttribute("postId");
-		
-		List<PostDetail> postDetail = postBO.getPostDetail(postId);
+		PostDetail postDetail = postBO.getPost(postId);
 		model.addAttribute("postDetail", postDetail);
 		
 		return "post/postDetail";

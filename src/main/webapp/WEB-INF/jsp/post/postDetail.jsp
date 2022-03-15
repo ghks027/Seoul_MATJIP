@@ -27,7 +27,7 @@
 		
 		<section class = "content d-flex justify-content-center">
 			<div class = "postDetail">
-			
+
 				<!-- 회원아이디, 포스트 지역, 찜 -->
 				<div class = "d-flex justify-content-between mt-1">
 					<div class = "d-flex ml-3">
@@ -54,25 +54,25 @@
 				<hr style = "border:solid 1px gray;">
 					
 				<!-- 포스트 댓글 -->
-				<div>
-					<div class = "text-secondary">댓글</div>
+				<div class = "text-secondary">댓글</div>
 					
+				<c:forEach var = "comment" items = "${postDetail.comment }">
 					<div class = "d-flex justify-content-between mt-2 ml-3">
-						<div class = "text-secondary" style = "font-size:small"><b class = "text-dark">회원</b> - 댓글 내용</div>
+						<div class = "text-secondary" style = "font-size:small"><b class = "text-dark">${comment.userLoginId }</b> - ${comment.content }</div>
 					</div>
+				</c:forEach>
 					
-					<hr>
+				<hr>
 						
-					<div class = "d-flex form-control ">
-						<input  style = "border:none;" type = "text" class = "form-control broder-0 bin mr-2" id = "commentInput" placeholder = "댓글을 입력하세요">
-						<button type = "button" class = "btn btn-sm commentBtn text-white" style = "background-color:#32CD32;">등록</button>
-					</div>
+				<div class = "d-flex form-control ">
+					<input  style = "border:none;" type = "text" class = "form-control broder-0 bin mr-2" id = "commentInput${postDetail.post.id }" placeholder = "댓글을 입력하세요">
+					<button type = "button" class = "btn btn-sm commentBtn text-white" style = "background-color:#32CD32;" data-post-id = "${postDetail.post.id }">등록</button>
 				</div>
 				
 				<hr>
 				
 				<a href = "/post/postList_view" class = "btn btn-secondary">목록으로</a>
-
+				
 			</div>
 		</section>
 		
@@ -80,5 +80,34 @@
 		
 	</div>
 
+	<script>
+	$(document).ready(function() {
+		
+		// 댓글 작성
+		$(".commentBtn").on("click", function() {
+			
+			let postId = $(this).data("post-id");
+			let content =  $("#commentInput" + postId).val();
+			
+			$.ajax({
+				type:"post",
+				url:"/post/comment/create",
+				data:{"postId":postId, "content":content},
+				success:function(data) {
+					if(data.result == "success") {
+						location.reload();
+					} else {
+						alert("댓글 작성 실패");
+					}
+				},
+				error:function() {
+					alert("에러 발생");
+				}
+				
+			});
+		});
+		
+	});
+	</script>
 </body>
 </html>

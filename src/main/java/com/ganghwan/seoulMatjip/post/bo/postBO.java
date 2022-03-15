@@ -37,22 +37,36 @@ public class PostBO {
 		return postDAO.selectPostList();
 	}
 	
+//	// 아이디로 포스트 불러오기
+//	public List<PostDetail> getPostDetail(int postId) {
+//		
+//		Post postList = postDAO.selectPostDetail(postId);
+//		List<PostDetail> postDetailList = new ArrayList<>();
+//		
+//		// postId로 댓글 불러오기
+//		List<Comment> commentList = commentBO.getCommentList(postId);
+//			
+//		PostDetail postDetail = new PostDetail();
+//		postDetail.setPost(postList);
+//		postDetail.setComment(commentList);
+//		
+//		postDetailList.add(postDetail);
+//		
+//		return postDetailList;
+//	}
+	
 	// 아이디로 포스트 불러오기
-	public List<PostDetail> getPostDetail(int postId) {
+	public PostDetail getPost(int postId) {
 		
-		Post postList = postDAO.selectPostDetail(postId);
-		List<PostDetail> postDetailList = new ArrayList<>();
+		Post post = postDAO.selectPostDetail(postId);
 		
 		// postId로 댓글 불러오기
 		List<Comment> commentList = commentBO.getCommentList(postId);
 			
 		PostDetail postDetail = new PostDetail();
-		postDetail.setPost(postList);
+		postDetail.setPost(post);
 		postDetail.setComment(commentList);
 		
-		postDetailList.add(postDetail);
-		
-//		return postDAO.selectPostDetail(postId);
-		return postDetailList;
+		return postDetail;
 	}
 }
