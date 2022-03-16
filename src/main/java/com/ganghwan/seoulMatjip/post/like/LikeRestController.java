@@ -40,7 +40,7 @@ public class LikeRestController {
 	}
 	
 	// 찜 취소
-	@GetMapping("/post/unlike")
+	@GetMapping("/unlike")
 	public Map<String, String> unlike(
 			@RequestParam("postId") int postId,
 			HttpServletRequest request
