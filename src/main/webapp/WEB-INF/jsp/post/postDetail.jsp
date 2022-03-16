@@ -125,7 +125,7 @@
 			});
 		});
 		
-		// 찜 하기
+/* 		// 찜 하기
 		$(".likeBtn").on("click", function(e) {
 			
 			e.preventDefault();
@@ -143,7 +143,7 @@
 					alert("에러 발생");
 				}
 			}); 
-		});
+		}); */
 		
 	});
 	</script>
