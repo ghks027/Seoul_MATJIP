@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ganghwan.seoulMatjip.post.bo.PostBO;
-import com.ganghwan.seoulMatjip.post.model.Post;
 import com.ganghwan.seoulMatjip.post.model.PostDetail;
 import com.ganghwan.seoulMatjip.user.area.bo.AreaBO;
 import com.ganghwan.seoulMatjip.user.area.model.Area;
@@ -43,8 +42,8 @@ public class PostController {
 		HttpSession session = request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
 		
-		List<Post> postList = postBO.getPostList();
-		model.addAttribute("postList", postList);
+		List<PostDetail> postlist = postBO.getPostList(userId);
+		model.addAttribute("postList", postlist);
 		
 		return "post/postList";
 	}

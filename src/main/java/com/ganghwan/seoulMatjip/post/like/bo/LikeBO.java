@@ -18,7 +18,7 @@ public class LikeBO {
 			likeDAO.deleteLike(userId, postId);
 			return false;
 		} else {
-			likeDAO.insertLike(postId, userId);
+			likeDAO.insertLike(userId, postId);
 			return true;
 		}
 	}

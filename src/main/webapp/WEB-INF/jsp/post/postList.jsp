@@ -69,24 +69,24 @@
 					<div class = "postList d-flex form-control justify-content-between mt-3">
 						<div class = "postContent my-2">
 							<div class = "d-flex align-items-center">
-								<div class = "form-control bg-secondary text-white text-center col-sm-4">${postList.userLoginId }</div>
+								<div class = "form-control bg-secondary text-white text-center col-sm-4">${postList.post.userLoginId }</div>
 								
-								<div class = "ml-3 text-dark" style = "border:none;"><b># ${postList.areaAreaId }</b></div>
+								<div class = "ml-3 text-dark" style = "border:none;"><b># ${postList.post.areaAreaId }</b></div>
 							</div>
 							
 							<div class = "contentDetail">
-								<a href = "/post/postDetail_view?postId=${postList.id}" class = "detail">
-									<h5 class = "mt-3 text-dark"><b>${postList.title }</b></h5>
+								<a href = "/post/postDetail_view?postId=${postList.post.id}" class = "detail">
+									<h5 class = "mt-3 text-dark"><b>${postList.post.title }</b></h5>
 									
-									<small class = "content text-secondary text-smail">${postList.content }</small>
+									<small class = "content text-secondary text-smail">${postList.post.content }</small>
 								</a>
 							</div>
 							
 							<!-- 찜 -->
 							<div class = "mt-3">
-								<a href = "#" class = "likeBtn text-dark" data-post-id = "${postDetail.post.id }">
+								<a href = "#" class = "likeBtn text-dark" data-post-id = "${postList.post.id }">
 									<c:choose>
-										<c:when test = "찜">
+										<c:when test = "${postList.like }">
 												<i class="bi bi-heart-fill text-danger"></i>
 										</c:when>
 									
@@ -95,7 +95,7 @@
 										</c:otherwise>
 									</c:choose>
 									
-									<b style = "font-size:small">찜 개수</b>
+									<b style = "font-size:small">${postList.likeCount } 개</b>
 								</a>
 							</div>
 							
@@ -103,7 +103,7 @@
 						
 						<div class = "postImage my-2">
 							<div class="image-box">
-								<img class="image-thumbnail" src="${postList.imagePath }">
+								<img class="image-thumbnail" src = "${postList.post.imagePath }">
 							</div>
 
 
@@ -122,12 +122,30 @@
 		
 	</div>
 	
-</body>
-
-<script>
+	<script>
 	$(document).ready(function() {
-
+		
+		// 찜 하기
+		$(".likeBtn").on("click", function(e) {
+			
+			e.preventDefault();
+			
+			let postId = $(this).data("post-id");
+			
+			$.ajax({
+				type:"get",
+				url:"/post/like",
+				data:{"postId":postId},
+				success:function(data) {
+					location.reload();
+				},
+				error:function(){
+					alert("에러 발생");
+				}
+			}); 
+		});
+		
 	});
-</script>
-
+	</script>
+</body>
 </html>

@@ -1,5 +1,6 @@
 package com.ganghwan.seoulMatjip.post.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +37,30 @@ public class PostBO {
 	}
 	
 	// 포스트 불러오기
-	public List<Post> getPostList() {
-		return postDAO.selectPostList();
+	public List<PostDetail> getPostList(int userId) {
+		
+		List<Post> postList = postDAO.selectPostList();
+		
+		List<PostDetail> postDetailList = new ArrayList<>();
+		
+		for(Post post:postList) {
+			// 찜 개수
+			int likeCount = likeBO.getLikeCount(post.getId());
+			
+			// 찜 여부 확인
+			boolean isLike = likeBO.isLike(userId, post.getId());
+			
+			PostDetail postDetail = new PostDetail();
+			
+			postDetail.setPost(post);
+			
+			postDetail.setLikeCount(likeCount);
+			postDetail.setLike(isLike);
+			
+			postDetailList.add(postDetail);
+		}
+		
+		return postDetailList;
 	}
 	
 	// 아이디로 포스트 불러오기
@@ -50,12 +73,17 @@ public class PostBO {
 		
 		// 찜 개수
 		int likeCount = likeBO.getLikeCount(postId);
+		
+		// 찜 여부 확인
+		boolean isLike = likeBO.isLike(post.getUserId(), postId);
 			
 		PostDetail postDetail = new PostDetail();
+		
 		postDetail.setPost(post);
 		postDetail.setComment(commentList);
 		
 		postDetail.setLikeCount(likeCount);
+		postDetail.setLike(isLike);
 		
 		return postDetail;
 	}

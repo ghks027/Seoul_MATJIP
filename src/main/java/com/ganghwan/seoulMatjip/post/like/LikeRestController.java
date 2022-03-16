@@ -30,7 +30,7 @@ public class LikeRestController {
 		
 		HttpSession session = request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
-		boolean isLike = likeBO.like(postId, userId);
+		boolean isLike = likeBO.like(userId, postId);
 		
 		Map<String, Boolean> result = new HashMap<>();
 		
@@ -48,7 +48,7 @@ public class LikeRestController {
 		
 		HttpSession session = request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
-		int count = likeBO.deleteLike(postId, userId);
+		int count = likeBO.deleteLike(userId, postId);
 		
 		Map<String, String> result = new HashMap<>();
 		

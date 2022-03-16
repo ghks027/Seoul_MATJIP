@@ -39,7 +39,21 @@
 					</div>
 					
 					<!-- 찜 -->
-					<div class = "mr-3">like</div>
+					<div class = "mr-3">
+						<a href = "#" class = "likeBtn text-dark" data-post-id = "${postDetail.post.id }">
+							<c:choose>
+								<c:when test = "${postDetail.like }">
+										<i class="bi bi-heart-fill text-danger"></i>
+								</c:when>
+									
+								<c:otherwise>
+										<i class="bi bi-heart"></i>
+								</c:otherwise>
+							</c:choose>
+									
+							<b style = "font-size:small">${postDetail.likeCount } 개</b>
+						</a>
+					</div>
 			
 				</div>
 				
@@ -109,6 +123,26 @@
 				}
 				
 			});
+		});
+		
+		// 찜 하기
+		$(".likeBtn").on("click", function(e) {
+			
+			e.preventDefault();
+			
+			let postId = $(this).data("post-id");
+			
+			$.ajax({
+				type:"get",
+				url:"/post/like",
+				data:{"postId":postId},
+				success:function(data) {
+					location.reload();
+				},
+				error:function(){
+					alert("에러 발생");
+				}
+			}); 
 		});
 		
 	});
