@@ -23,4 +23,9 @@ public class CommentBO {
 	public List<Comment> getCommentList(int postId) {
 		return commentDAO.selectCommentList(postId);
 	}
+	
+	// 게시글 댓글 삭제
+	public int deleteCommentByPost(int postId) {
+		return commentDAO.deleteCommentByPost(postId);
+	}
 }

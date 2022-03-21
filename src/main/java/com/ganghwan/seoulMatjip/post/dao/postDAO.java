@@ -28,4 +28,14 @@ public interface PostDAO {
 	public Post selectPostDetail(
 			@Param("postId") int postId
 			);
+	
+	// 게시글 삭제
+	public int deletePost(
+			@Param("postId") int postId
+			);
+	
+	// 파일 삭제
+	public Post selectPost(
+			@Param("postId") int postId
+			);
 }

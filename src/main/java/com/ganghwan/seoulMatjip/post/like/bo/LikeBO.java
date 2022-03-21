@@ -43,4 +43,9 @@ public class LikeBO {
 			return true;
 		}
 	}
+	
+	// 찜 삭제
+	public int deleteLikeByPost(int postId) {
+		return likeDAO.deleteLikeByPost(postId);
+	}
 }

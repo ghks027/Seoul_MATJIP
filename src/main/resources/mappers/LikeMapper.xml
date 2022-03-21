@@ -53,4 +53,13 @@
  		AND
  			`postId` = #{postId}
  	</select>
+ 	
+ 	<!-- 찜 삭제 -->
+ 	<delete id = "deleteLikeByPost" parameterType = "int">
+ 		DELETE FROM
+ 			`like`
+ 		WHERE
+ 			`postId` = #{postId}
+ 	</delete>
+ 	
  </mapper>

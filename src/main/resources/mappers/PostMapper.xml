@@ -70,4 +70,32 @@
  		WHERE
  			`id` = #{postId}
  	</select>
+ 	
+ 	<!-- 게시글 삭제 -->
+ 	<delete id = "deletePost" parameterType = "int">
+ 		DELETE FROM
+ 			`post`
+ 		WHERE
+ 			`id` = #{postId}
+ 	</delete>
+ 	
+ 	<!-- 파일 삭제 -->
+ 	<select id = "selectPost" parameterType = "int" resultType = "com.ganghwan.seoulMatjip.post.model.Post">
+ 		SELECT
+			`id`
+ 			, `userId`
+ 			, `userLoginId`
+ 			, `title`
+ 			, `content`
+ 			, `imagePath`
+ 			, `areaAreaId`
+ 			, `userProfileImage`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+ 		WHERE
+ 			`id` = #{postId}
+ 	</select>
+ 	
  </mapper>

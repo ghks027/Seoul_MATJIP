@@ -102,16 +102,20 @@
 						</div>
 						
 						<div class = "postImage my-2">
+							<!-- 이미지 -->
 							<div class="image-box">
 								<img class="image-thumbnail" src = "${postList.post.imagePath }">
 							</div>
 
-
-							<div class = "d-flex justify-content-between mt-2">
-								<button type = "button" class = "btn btn-secondary">수정</button>
-								<button type = "button" class = "btn">삭제</button>
-							</div>
+							<!-- 수정, 삭제 -->
+							<c:if test = "${postList.post.userId eq userId}">
+								<div class = "d-flex justify-content-between mt-2">
+									<button type = "button" class = "btn btn-secondary btn-sm">수정</button>
+									<button type = "button" class = "btn btn-sm deleteBtn" data-post-id = "${postList.post.id }">삭제</button>
+								</div>
+							</c:if>
 						</div>
+						
 					</div>
 				</c:forEach>
 				
@@ -143,6 +147,30 @@
 					alert("에러 발생");
 				}
 			}); 
+		});
+		
+		// 게시글 삭제
+		$(".deleteBtn").on("click", function(e) {
+			
+			e.preventDefault();
+			
+			let postId = $(this).data("post-id");
+			
+			$.ajax({
+				type:"get",
+				url:"/post/delete",
+				data:{"postId":postId},
+				success:function(data) {
+					if(data.result == "success") {
+						location.reload();
+					} else {
+						alert("삭제 불가");
+					}
+				},
+				error:function(){
+					alert("에러 발생");
+				}
+			});
 		});
 		
 	});

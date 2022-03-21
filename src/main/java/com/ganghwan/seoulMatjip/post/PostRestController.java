@@ -54,9 +54,19 @@ public class PostRestController {
 	// 게시글 삭제
 	@GetMapping("/delete")
 	public Map<String, String> delete(
-			@RequestParam("postId") int postId,
-			HttpServletRequest request
+			@RequestParam("postId") int postId
 			) {
 		
+		int count = postBO.deletePost(postId);
+		
+		Map<String, String> result = new HashMap<>();
+		
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		
+		return result;
 	}
 }

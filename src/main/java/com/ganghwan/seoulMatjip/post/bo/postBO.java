@@ -87,4 +87,16 @@ public class PostBO {
 		
 		return postDetail;
 	}
+	
+	// 게시글 삭제
+	public int deletePost(int postId) {
+		
+		Post post = postDAO.selectPostDetail(postId);
+		FileManagerService.removeFile(post.getImagePath());
+		
+		commentBO.deleteCommentByPost(postId);
+		likeBO.deleteLikeByPost(postId);
+		
+		return postDAO.deletePost(postId);
+	}
 }
