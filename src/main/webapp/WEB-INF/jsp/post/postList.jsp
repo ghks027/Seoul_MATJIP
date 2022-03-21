@@ -173,6 +173,18 @@
 			});
 		});
 		
+		// 지역별 정렬
+		$("#areaAreaIdIdInput").change(function(e) {
+			
+			e.preventDefault();
+		 	
+			let areaId = $(this).val();
+			
+			alert(areaId); 
+			
+
+		});
+		
 	});
 	</script>
 </body>

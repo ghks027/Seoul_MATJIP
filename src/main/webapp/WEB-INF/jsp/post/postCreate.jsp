@@ -17,6 +17,8 @@
 
 <link rel = "stylesheet" href = "/static/css/style.css" type = "text/css">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
 </head>
 <body>
 	
@@ -41,7 +43,9 @@
 				</div>
 				
 				<textarea class = "form-control mt-3" rows="5" id = "contentInput" placeholder = "내용을 입력하세요"></textarea>
-				<input type = "file" class = "mt-3" id = "fileInput">
+				
+				<span class = "img-icon"><i class="bi bi-image" id = "imageBtn" style = "color:#32CD32;"></i></span>
+				<input type = "file" class = "d-none mt-3" id = "fileInput">
 				
 				<div class = "d-flex justify-content-between mt-3">
 					<a href = "/post/postList_view" class = "btn btn-secondary">작성 취소</a>
@@ -58,6 +62,10 @@
 
 <script>
 	$(document).ready(function() {
+		
+		$("#imageBtn").on("click", function() {
+			$("#fileInput").click();
+		});
 
 		// 게시글 작성
 		$("#saveBtn").on("click", function() {
