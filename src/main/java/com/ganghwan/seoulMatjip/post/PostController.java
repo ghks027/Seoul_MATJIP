@@ -72,4 +72,24 @@ public class PostController {
 		
 		return "post/postDetail";
 	}
+	
+//	// 지역별 포스트 리스트
+//	@GetMapping("postListByArea_view")
+//	public String postListByArea(
+//			Model model,
+//			@RequestParam("areaAreaId") String areaAreaId,
+//			HttpServletRequest request
+//			) {
+//		
+//		List<Area> areaList = areaBO.getAreaList();
+//		model.addAttribute("areaList", areaList);
+//		
+//		HttpSession session = request.getSession();
+//		int userId = (Integer)session.getAttribute("userId");
+//		
+//		List<PostDetail> postlist = postBO.getPostListByArea(userId, areaAreaId);
+//		model.addAttribute("postList", postlist);
+//		
+//		return "post/postListByArea";
+//	}
 }

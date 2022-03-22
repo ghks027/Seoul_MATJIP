@@ -99,7 +99,7 @@
  	</select>
  	
  	<!-- 지역별 정렬 -->
- 	<select id = "selectPostListByArea" resultType = "com.ganghwan.seoulMatjip.post.model.Post">
+<!--  	<select id = "selectPostListByArea" resultType = "com.ganghwan.seoulMatjip.post.model.Post">
  		SELECT
  			`id`
  			, `userId`
@@ -117,6 +117,6 @@
  			`id` = #{areaAreaId}
  		ORDER BY
  			`id` DESC
- 	</select>
+ 	</select> -->
  	
  </mapper>

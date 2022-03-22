@@ -100,30 +100,27 @@ public class PostBO {
 		return postDAO.deletePost(postId);
 	}
 	
-	// 지역별 정렬
-	public List<PostDetail> getPostListByArea(int userId, int areaAreaId) {
-		
-		List<Post> postList = postDAO.selectPostListByArea(areaAreaId);
-		
-		List<PostDetail> postDetailList = new ArrayList<>();
-		
-		for(Post post:postList) {
-			// 찜 개수
-			int likeCount = likeBO.getLikeCount(post.getId());
-			
-			// 찜 여부 확인
-			boolean isLike = likeBO.isLike(userId, post.getId());
-			
-			PostDetail postDetail = new PostDetail();
-			
-			postDetail.setPost(post);
-			
-			postDetail.setLikeCount(likeCount);
-			postDetail.setLike(isLike);
-			
-			postDetailList.add(postDetail);
-		}
-		
-		return postDetailList;
-	}
+//	// 지역별 정렬
+//	public List<PostDetail> getPostListByArea(int userId, String areaAreaId) {
+//		
+//		List<Post> postList = postDAO.selectPostListByArea(areaAreaId);
+//		
+//		List<PostDetail> postDetailList = new ArrayList<>();
+//		
+//		for(Post post:postList) {
+//
+//			int likeCount = likeBO.getLikeCount(post.getId());
+//			boolean isLike = likeBO.isLike(userId, post.getId());
+//			
+//			PostDetail postDetail = new PostDetail();
+//			postDetail.setPost(post);
+//			
+//			postDetail.setLikeCount(likeCount);
+//			postDetail.setLike(isLike);
+//			
+//			postDetailList.add(postDetail);
+//		}
+//		
+//		return postDetailList;
+//	}
 }

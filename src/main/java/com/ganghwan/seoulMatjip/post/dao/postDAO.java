@@ -39,8 +39,8 @@ public interface PostDAO {
 			@Param("postId") int postId
 			);
 	
-	// 지역별 정렬
-	public List<Post> selectPostListByArea(
-			@Param("areaAreaId") int areaAreaId
-			);
+//	// 지역별 정렬
+//	public List<Post> selectPostListByArea(
+//			@Param("areaAreaId") String areaAreaId
+//			);
 }
