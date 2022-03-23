@@ -39,6 +39,11 @@ public interface PostDAO {
 			@Param("postId") int postId
 			);
 	
+	// 포스트 수정
+	public int updatePost(
+			@Param("postId") int postId
+			);
+	
 //	// 지역별 정렬
 //	public List<Post> selectPostListByArea(
 //			@Param("areaAreaId") String areaAreaId

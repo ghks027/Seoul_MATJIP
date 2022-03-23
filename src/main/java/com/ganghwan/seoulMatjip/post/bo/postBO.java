@@ -100,6 +100,11 @@ public class PostBO {
 		return postDAO.deletePost(postId);
 	}
 	
+	// 포스트 수정
+	public int updatePost(int postId) {
+		return postDAO.updatePost(postId);
+	}
+	
 //	// 지역별 정렬
 //	public List<PostDetail> getPostListByArea(int userId, String areaAreaId) {
 //		

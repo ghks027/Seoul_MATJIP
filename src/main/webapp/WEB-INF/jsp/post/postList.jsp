@@ -77,7 +77,7 @@
 							<!-- 수정, 삭제 -->
 							<c:if test = "${postList.post.userId eq userId}">
 								<div class = "d-flex justify-content-between mt-2">
-									<button type = "button" class = "btn btn-secondary btn-sm">수정</button>
+									<a href = "/post/postUpdate_view?postId=${postList.post.id}" class = "btn btn-secondary btn-sm">수정</a>
 									<button type = "button" class = "btn btn-sm deleteBtn" data-post-id = "${postList.post.id }">삭제</button>
 								</div>
 							</c:if>

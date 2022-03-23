@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ganghwan.seoulMatjip.post.bo.PostBO;
+import com.ganghwan.seoulMatjip.post.model.Post;
 import com.ganghwan.seoulMatjip.post.model.PostDetail;
 import com.ganghwan.seoulMatjip.user.area.bo.AreaBO;
 import com.ganghwan.seoulMatjip.user.area.model.Area;
@@ -71,6 +72,22 @@ public class PostController {
 		model.addAttribute("postDetail", postDetail);
 		
 		return "post/postDetail";
+	}
+	
+	// 포스트 수정
+	@GetMapping("/postUpdate_view")
+	public String postUpdateView(
+			Model model,
+			@RequestParam("postId") int postId
+			) {
+		
+		List<Area> areaList = areaBO.getAreaList();
+		model.addAttribute("areaList", areaList);
+		
+		PostDetail postUpdate = postBO.getPost(postId);
+		model.addAttribute("postUpdate", postUpdate);
+		
+		return "post/postUpdate";
 	}
 	
 //	// 지역별 포스트 리스트

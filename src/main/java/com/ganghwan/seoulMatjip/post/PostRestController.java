@@ -69,4 +69,23 @@ public class PostRestController {
 		
 		return result;
 	}
+	
+	// 게시글 수정
+	@PostMapping("/update")
+	public Map<String, String> update(
+			@RequestParam("postId") int postId
+			) {
+
+		Map<String, String> result = new HashMap<>();
+		
+		int count = postBO.updatePost(postId);
+		
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+
+		return result;
+	}
 }

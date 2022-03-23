@@ -98,6 +98,21 @@
  			`id` = #{postId}
  	</select>
  	
+ 	<!-- 포스트 수정 -->
+	<update id = "updatePost" parameterType = "int">
+		UPDATE
+			`post`
+		SET
+ 			`title`
+ 			, `content`
+ 			, `imagePath`
+ 			, `areaAreaId`
+ 			, `updatedAt`
+ 		WHERE
+ 			`id` = #{postId}
+			
+	</update>
+ 	
  	<!-- 지역별 정렬 -->
 <!--  	<select id = "selectPostListByArea" resultType = "com.ganghwan.seoulMatjip.post.model.Post">
  		SELECT
