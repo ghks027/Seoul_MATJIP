@@ -27,7 +27,7 @@
 				<div class = "d-flex">
 					<!-- 찜 순서별 정렬 -->
 					<div class = "d-flex align-items-end mr-3">
-						<label><input type = "radio" name = "bestLike" value = ""> 찜 많은 순</label>
+						<label><input type = "radio" name = "bestLike" value = "" ondblclick="this.checked=false"> 찜 많은 순</label>
 					</div>
 							
 					<!-- 글쓰기 기능 -->
