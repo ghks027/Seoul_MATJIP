@@ -5,7 +5,7 @@
     
 		<header class = "d-flex justify-content-between">
 			<div class = "d-flex align-items-end ml-3">
-				<span style = "color:#32CD32;"><h2>Seoul MATJIP</h2></span>
+				<a href = "/post/postList_view"><span style = "color:#32CD32;"><h2>Seoul MATJIP</h2></span></a>
 			</div>
 			
 			<div class = "d-flex align-items-end mr-3">
