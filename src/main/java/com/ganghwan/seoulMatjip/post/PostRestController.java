@@ -73,8 +73,11 @@ public class PostRestController {
 	// 게시글 수정
 	@PostMapping("/update")
 	public Map<String, String> update(
-			@RequestParam("postId") int postId
+			HttpServletRequest request
 			) {
+		
+		HttpSession session = request.getSession();
+		int postId = (Integer)session.getAttribute("postId");
 
 		Map<String, String> result = new HashMap<>();
 		

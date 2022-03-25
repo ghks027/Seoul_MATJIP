@@ -103,11 +103,11 @@
 		UPDATE
 			`post`
 		SET
- 			`title`
- 			, `content`
- 			, `imagePath`
- 			, `areaAreaId`
- 			, `updatedAt`
+ 			`title` = #{title}
+ 			, `content` = #{content}
+ 			, `imagePath` = #{imagePath}
+ 			, `areaAreaId` = #{areaAreaId}
+ 			, `updatedAt` = #{updateAt}
  		WHERE
  			`id` = #{postId}
 			
