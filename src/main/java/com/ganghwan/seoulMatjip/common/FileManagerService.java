@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class FileManagerService {
 	
-	public final static String FILE_UPLOAD_PATH = "D:\\웹프런트 조경환1105\\Seoul_MATJIP\\upload\\image/";
+	public final static String FILE_UPLOAD_PATH = "/home/ec2-user/seoul_matjip/upload/images/";
 	
 	private static Logger logger = LoggerFactory.getLogger(FileManagerService.class);
 	
