@@ -107,7 +107,7 @@
  			, `content` = #{content}
  			, `imagePath` = #{imagePath}
  			, `areaAreaId` = #{areaAreaId}
- 			, `updatedAt` = #{updateAt}
+ 			, `updatedAt` = now()
  		WHERE
  			`id` = #{postId}
 			
