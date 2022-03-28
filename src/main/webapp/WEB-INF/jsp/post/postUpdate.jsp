@@ -81,9 +81,9 @@
 		// 게시글 수정
 		$("#updateBtn").on("click", function() {
 			
-		 	alert("수정 불가");
+		  	alert("수정 불가"); 
 			
- 			/* let title = $("#titleInput").val();
+/*  			let title = $("#titleInput").val();
 			let content = $("#contentInput").val().trim();
 			let areaAreaId = $("#areaAreaIdInput").val();
 			let file = $("#fileInput").val();
@@ -117,7 +117,7 @@
 				error:function() {
 					alert("에러 발생");
 				}
-			});  */
+			}); */  
 		});
 		
 	});
