@@ -19,16 +19,28 @@
 
 ### 주요기능
 - 회원가입
+  - package : [com.ganghwan.seoulMatjip.user.*](https://github.com/ghks027/Seoul_MATJIP/tree/master/src/main/java/com/ganghwan/seoulMatjip/user)
+  - view : [/webapp/WEB-INF/jsp/user/*](https://github.com/ghks027/Seoul_MATJIP/blob/master/src/main/webapp/WEB-INF/jsp/user/signUp.jsp)
 
 - 로그인
+  - package : [com.ganghwan.seoulMatjip.user.*](https://github.com/ghks027/Seoul_MATJIP/tree/master/src/main/java/com/ganghwan/seoulMatjip/user)
+  - view : [/webapp/WEB-INF/jsp/user/*](https://github.com/ghks027/Seoul_MATJIP/blob/master/src/main/webapp/WEB-INF/jsp/user/signIn.jsp)
 
 - 게시글 작성하기(게시글 지역 선택, 이미지 파일 첨부)
+  - package : [com.ganghwan.seoulMatjip.post.*](https://github.com/ghks027/Seoul_MATJIP/tree/master/src/main/java/com/ganghwan/seoulMatjip/post)
+  - view : [/webapp/WEB-INF/jsp/post/*](https://github.com/ghks027/Seoul_MATJIP/blob/master/src/main/webapp/WEB-INF/jsp/post/postCreate.jsp)
 
 - 게시글 댓글 달기
+  - package : [com.ganghwan.seoulMatjip.comment.*](https://github.com/ghks027/Seoul_MATJIP/tree/master/src/main/java/com/ganghwan/seoulMatjip/post/comment)
+  - view : [/webapp/WEB-INF/jsp/post/*](https://github.com/ghks027/Seoul_MATJIP/blob/master/src/main/webapp/WEB-INF/jsp/post/postDetail.jsp)
 
 - 게시글 찜 하기
+  - package : [com.ganghwan.seoulMatjip.like.*](https://github.com/ghks027/Seoul_MATJIP/tree/master/src/main/java/com/ganghwan/seoulMatjip/post/like)
+  - view : [/webapp/WEB-INF/jsp/post/*](https://github.com/ghks027/Seoul_MATJIP/blob/master/src/main/webapp/WEB-INF/jsp/post/postList.jsp)
 
 - 게시글 목록보기, 내용 보기
+  - package : [com.ganghwan.seoulMatjip.post.*](https://github.com/ghks027/Seoul_MATJIP/tree/master/src/main/java/com/ganghwan/seoulMatjip/post)
+  - view : [/webapp/WEB-INF/jsp/post/*](https://github.com/ghks027/Seoul_MATJIP/blob/master/src/main/webapp/WEB-INF/jsp/post/postList.jsp)
 
 ### 데모
 
