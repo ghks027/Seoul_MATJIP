@@ -10,7 +10,7 @@
 >여러 사람과 맛집 정보를 공유하기 위해 개발
 
 ### 포트폴리오
->[포트폴리오 아직 없음](link)
+>[포트폴리오](https://github.com/ghks027/Seoul_MATJIP/blob/master/%ED%8F%AC%EB%A5%B4%ED%8F%B4%EB%A6%AC%EC%98%A4.pdf)
 
 ### 설계
 - UI 계획 : [Kakao OvenApp](https://ovenapp.io/view/SrDhsw6Bnhqw6YXrhoZLAMxlQcJMsxBt/)
