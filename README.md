@@ -45,7 +45,12 @@
 ### 데모
 
 ### 외부 라이브러리 라이센스
-
+- Tomcat [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- Mysql [GPLv2 or proprietary](https://www.gnu.org/licenses/gpl-3.0.html)
+- Spring framework [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- Mybatis [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+- Bootstrap [MIT License](https://opensource.org/licenses/MIT)
+- jQuery [MIT License](https://opensource.org/licenses/MIT)
 
 ### 구현 못한 기능
 - 게시글 목록에서 지역별 게시글을 볼 수 있는 기능
