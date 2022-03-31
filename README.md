@@ -9,6 +9,11 @@
 > - 평소 가고 싶거나 자주 갔던 맛집들을 블로그 형식으로 저장해 모아 두고 싶었고  
 >여러 사람과 맛집 정보를 공유하기 위해 개발
 
+### Seoul_MATJIP URL
+>[Seoul_MATJIP](http://3.35.24.188:8080/user/signin_view)
+>아이디 : matjip
+>비밀번호 : 1234
+
 ### 포트폴리오
 >[포트폴리오](https://github.com/ghks027/Seoul_MATJIP/blob/master/%ED%8F%AC%EB%A5%B4%ED%8F%B4%EB%A6%AC%EC%98%A4.pdf)
 
