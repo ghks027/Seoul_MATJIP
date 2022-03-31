@@ -10,8 +10,8 @@
 >여러 사람과 맛집 정보를 공유하기 위해 개발
 
 ### Seoul_MATJIP URL
->[Seoul_MATJIP](http://3.35.24.188:8080/user/signin_view)
->아이디 : matjip
+>[Seoul_MATJIP](http://3.35.24.188:8080/user/signin_view)  
+>아이디 : matjip  
 >비밀번호 : 1234
 
 ### 포트폴리오
